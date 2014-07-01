@@ -1,0 +1,2 @@
+defmodule FindGoodSolrDoc do
+end
