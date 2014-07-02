@@ -18,7 +18,7 @@ defmodule FindGoodSolrDocTest do
     "ipc_code",
     "application_number"
   ]
-  @solr_query_url "http://localhost:8983/solr/us_patent_grant/select?q=*%3A*%0A&rows=1000&fl=#{Enum.join(@solr_fields, "%2C")}&wt=json"
+  @solr_query_url "http://localhost:8983/solr/us_patent_grant/select?q=*:*&rows=1000&fl=#{Enum.join(@solr_fields, "%2C")}&wt=json"
   @json (HTTPotion.get @solr_query_url).body
   @reply JSON.decode!(@json)
   @response @reply["response"]
