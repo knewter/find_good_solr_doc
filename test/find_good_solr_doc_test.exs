@@ -25,7 +25,7 @@ defmodule FindGoodSolrDocTest do
   @docs @response["docs"]
 
   test "sorts by the number of fields present in the doc" do
-    IO.puts "\n\nBest results are:"
+    IO.puts "Best results are:"
     @docs
     |> Enum.map(&({&1["id"], (Map.keys(&1) |> Enum.count)}))
     |> Enum.sort(fn({_, a}, {_, b}) -> a > b end)
